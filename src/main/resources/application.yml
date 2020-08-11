@@ -7,3 +7,6 @@ spring:
 netty:
   port: 8091
   host: 0.0.0.0
+logging:
+  level:
+    root: debug

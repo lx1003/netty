@@ -13,7 +13,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.net.InetSocketAddress;
 
-@Component
+//@Component
 public class NettyServer {
 
     /**
@@ -30,7 +30,7 @@ public class NettyServer {
     @Value("${netty.port}")
     private Integer port;
 
-    @PostConstruct
+//    @PostConstruct
     public void start() throws InterruptedException {
         ServerBootstrap bootstrap = new ServerBootstrap();
         bootstrap.group(boss,work)
@@ -55,7 +55,7 @@ public class NettyServer {
         }
     }
 
-    @PreDestroy
+//    @PreDestroy
     public void destory() throws InterruptedException {
         boss.shutdownGracefully().sync();
         work.shutdownGracefully().sync();
